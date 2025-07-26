@@ -6,9 +6,11 @@
   "author": "",
   "type": "commonjs",
   "main": "index.js",
-  "scripts": {
-    "start": "nodemon index.js"
-  },
+ "scripts": {
+  "start": "node index.js",        // ✅ for production (Render)
+  "dev": "nodemon index.js"        // 👩‍💻 for local use
+}
+,
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cloudinary": "^2.7.0",
