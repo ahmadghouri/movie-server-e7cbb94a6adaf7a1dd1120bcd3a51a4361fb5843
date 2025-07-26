@@ -7,8 +7,8 @@
   "type": "commonjs",
   "main": "index.js",
  "scripts": {
-  "start": "node index.js",        // ✅ for production (Render)
-  "dev": "nodemon index.js"        // 👩‍💻 for local use
+  "start": "node index.js",        
+  "dev": "nodemon index.js"        
 }
 ,
   "dependencies": {
