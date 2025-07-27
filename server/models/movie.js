@@ -10,6 +10,7 @@ const movieSchema = mongoose.Schema({
   },
   poster: {
     type: String,
+    required:true,
   },
   rating: {
     type: Number,
