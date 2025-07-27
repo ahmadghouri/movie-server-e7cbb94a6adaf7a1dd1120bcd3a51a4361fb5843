@@ -34,12 +34,13 @@ const userSignin = async (req, res) => {
       expiresIn: "7d",
     });
 
-    res.cookie("token", token, {
-      httpOnly: true,
-      sameSite: "Lax", // or 'None' for production with HTTPS
-      secure: false, // true in production
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-    });
+ res.cookie("token", token, {
+  httpOnly: true,
+  sameSite: "None",
+  secure: true, // required for HTTPS
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+});
+
 
     res.status(200).json({ msg: "Login success", user });
   } catch (error) {
