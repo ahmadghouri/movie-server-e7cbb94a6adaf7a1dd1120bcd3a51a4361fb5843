@@ -13,9 +13,20 @@ const contectRouter = require("./router/contect");
 
 // DBconnect
 connectDB();
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://movie-server-0fmj.onrender.com",
+];
+
 app.use(
   cors({
-    origin: "https://movie-server-0fmj.onrender.com",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
