@@ -10,7 +10,15 @@ const movieRoutes = require("./router/movie");
 const contectRouter = require("./router/contect");
 // const os = require("os");
 // const cluster = require("cluster");
+const fs = require("fs");
+const path = require("path");
 
+const uploadPath = path.join(__dirname, "uploads");
+
+// Create uploads folder if it doesn't exist
+if (!fs.existsSync(uploadPath)) {
+  fs.mkdirSync(uploadPath);
+}
 // DBconnect
 connectDB();
 app.use(
