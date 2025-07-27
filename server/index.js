@@ -15,7 +15,7 @@ const contectRouter = require("./router/contect");
 connectDB();
 app.use(
   cors({
-    origin: "https://movie-server-0fmj.onrender.com/",
+    origin: "https://movie-server-0fmj.onrender.com",
     credentials: true,
   })
 );
