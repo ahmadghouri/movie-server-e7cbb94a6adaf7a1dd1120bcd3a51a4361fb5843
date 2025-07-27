@@ -23,10 +23,14 @@ if (!fs.existsSync(uploadPath)) {
 connectDB();
 app.use(
   cors({
-    origin: true, // Accept any origin (dangerous only in dev)
+    origin: [
+      "http://localhost:5173",
+      "https://movie-server-0fmj.onrender.com"
+    ],
     credentials: true,
   })
 );
+
 
 dotenv.config();
 app.use(express.json());
