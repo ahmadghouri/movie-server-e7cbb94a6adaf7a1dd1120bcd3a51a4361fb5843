@@ -23,7 +23,7 @@ const Signup = () => {
   };
   const signupHandle = async () => {
     try {
-      const res = await axiosbase.post("/Signup", formData);
+      const res = await axiosbase.post("/signup", formData);
       console.log(res);
       navigate("/signin");
     } catch (error) {
